@@ -17,7 +17,7 @@ def teardown():
     """ closes the current session"""
     models.storage.close()
 
-@app.errorhandler()
+@app.errorhandler(404)
 def page_not_found():
     """ returns a JSON response for 404 errors"""
     return jsonify({"error": "Not found"})
